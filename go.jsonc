@@ -1,0 +1,110 @@
+{
+	// Place your snippets for go here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"Channel": {
+		"prefix": "~channel",
+		"body": "${1:name} := make(chan ${0:datatype})",
+		"description": "Scaffolds a channel declaration"
+	},
+	"Channel (Buffered)": {
+		"prefix": "~channel",
+		"body": "${1:name} := make(chan ${2:datatype}, ${0:buffer})",
+		"description": "Scaffolds a channel declaration"
+	},
+	"Function": {
+		"prefix": "~func",
+		"body": [
+			"func ${1:name}(${2:args?})${3:returns?} {",
+			"\t$0",
+			"}"
+		],
+		"description": "Scaffolds a function"
+	},
+	"Go Routine": {
+		"prefix": "~goroutine",
+		"body": [
+			"go func() {",
+			"\t$0",
+			"}()"
+		],
+		"description": "Scaffolds an anonymous go routine"
+	},
+	"Interface": {
+		"prefix": "~interface",
+		"body": [
+			"type ${1:name} interface {",
+			"\t$0",
+			"}"
+		],
+		"description": "Scaffolds a interface definition"
+	},
+	"Main Package & Function": {
+		"prefix": "~main",
+		"body": [
+			"package main",
+			"$1",
+			"func main() {",
+			"\t$0",
+			"}\n"
+		],
+		"description": "Declares the package as main and scaffold the main function"
+	},
+	"Map": {
+		"prefix": "~map",
+		"body": "${1:name} := make(map[${2:keyType}]${0:valueType})",
+		"description": "Scaffolds a map variable declaration"
+	},
+	"Method": {
+		"prefix": "~method",
+		"body": [
+			"func (${1:struct}) ${2:name}(${3:args?}) ${4:returns?} {",
+			"\t$0",
+			"}"
+		]
+	},
+	"Multi-Line Comment": {
+		"prefix": "~comment",
+		"body": "/*\n$0\n*/",
+		"description": "Scaffolds a multi-line comment"
+	},
+	"Print Line": {
+		"prefix": "~println",
+		"body": "fmt.Println(${0:value})",
+		"description": "Scaffolds a fmt.Println method call"
+	},
+	"Struct": {
+		"prefix": "~struct",
+		"body": [
+			"type ${1:name} struct {",
+			"\t$0",
+			"}"
+		],
+		"description": "Scaffolds a struct definition"
+	},
+	"Ticker": {
+		"prefix": "~ticker",
+		"body": "${1:name} := time.NewTicker(${0:milliseconds} * time.Millisecond)",
+		"description": "Scaffolds a ticker variable assignment"
+	},
+	"Timer": {
+		"prefix": "~timer",
+		"body": "${1:name} := time.NewTimer(${0:milliseconds} * time.Millisecond)",
+		"description": "Scaffolds a timer variable assignment"
+	},
+	"Variable Declaration": {
+		"prefix": "~var",
+		"body": "${1:name} := ${2:value}",
+		"description": "Scaffold a shorthand variable declaration"
+	}
+}
