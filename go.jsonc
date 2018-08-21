@@ -27,6 +27,15 @@
 		],
 		"description": "Scaffolds an anonymous go routine"
 	},
+	"HTTP Router Handler": {
+		"prefix": "~httpRouterHandler",
+		"body": [
+			"func ${1:functionName}(rw http.ResponseWriter, r *http.Request, p httprouter.Params) {",
+			"\t$0",
+			"}"
+		],
+		"description": "Scaffolds a route handler function for use with the github.com/julienschmidt/httprouter package"
+	},
 	"Interface": {
 		"prefix": "~interface",
 		"body": [
